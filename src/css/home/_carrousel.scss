@@ -1,0 +1,102 @@
+.carrousel{
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .c-image{
+        height: 250px;
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        animation: imgShow 0.6s;
+        transition: all 0.2s;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        
+
+        img{
+            z-index: 1;
+            user-select: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 0 0;
+        }
+    }
+    .c-txt{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        gap: 20px;
+        background-color: $white;
+        padding: 50px 30px;
+        transition: all 1s;
+
+        .arrows-container{
+            height: 43px;
+            position: absolute;
+            top: -44px;
+            right: 0;
+            z-index: 10;
+            .arrows{
+            background-color: $black;
+            padding: 11px;
+
+            &:hover{
+                background-color: $very-dark-gray;
+            }
+            @include font(43px, 500, $white)
+            }
+        }
+
+        h2{
+            @include font(35px, 700, $black)
+            
+        }
+        
+        p{
+            line-height: 19px;
+            @include font (16px, 500, $dark-gray)
+        }
+
+        button{
+            margin-top: 20px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.2s;
+            
+            &:hover{
+                color: $very-dark-gray;    
+                gap: 35px;
+            }
+            &:hover > span{
+                text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+            }
+            @include font(17px, 600, $black)
+
+        }
+    }
+}
+
+@keyframes imgShow {
+    0%{
+        transform: translateX(-100%);
+    }
+}

@@ -11,7 +11,7 @@ export default function Menu() {
 
   return (
     <nav className="menu">
-        <img className="logo" src="/images/logo.svg" alt="logo" />
+        <span className="logo">room</span>
         <img className="menu-icon" onClick={showMenu} src="/images/icon-hamburger.svg" alt="open-menu-icon" />
         <div className="menu-container">
             <img className="menu-icon" onClick={hideMenu} src="/images/icon-close.svg" alt="close-menu-icon" />  

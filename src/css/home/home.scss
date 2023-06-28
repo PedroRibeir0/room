@@ -1,15 +1,16 @@
-$Dark-Gray: hsl(0, 0%, 63%);
-$Black: hsl(0, 0%, 0%);
-$White: hsl(0, 0%, 100%);
-$Very-Dark-Gray: hsl(0, 0%, 27%);
+$dark-gray: hsl(0, 0%, 63%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$very-dark-gray: hsl(0, 0%, 27%);
 
 
-@mixin font($size, $weight){
+@mixin font($size, $weight, $color){
     font-weight: $weight;
     font-size: $size;
+    color: $color
 }
 
-@import 'menu';
+@import 'menu', 'carrousel';
 
 body{
     background-color: rgb(29, 29, 29);

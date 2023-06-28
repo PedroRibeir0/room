@@ -4,13 +4,17 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    height: 100px;
+    height: 80px;
     padding: 0 20px;
-    gap: calc(50% - 40px);
+    gap: calc(50% - 48px);
+    position: fixed;
+    top: 0;
 }
 
 .logo{
     order: 2;
+    user-select: none;
+    @include font(30px, 500, $white)
 }
 
 .menu-icon{
@@ -23,18 +27,16 @@
 .menu-container{
     list-style: none;
     display: flex;
-    color: black;
-    background-color: white;
+    background-color: $white;
     width: 100%;
     position: absolute;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 80px;
     top: 0;
     right: 0;
     padding: 0 20px;
-    animation: showMenu 0.3s;
-    
+    animation: showMenu 0.2s;
 
     ul{
         width: 80%;
@@ -42,8 +44,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        li:hover{
+            text-decoration: underline;
+            text-underline-offset: 7px;
+            text-decoration-thickness: 2px;
+        }
     }
-    @include font(17px, 600)
+    @include font(17px, 600, $black)
 }
 
 @keyframes showMenu {
