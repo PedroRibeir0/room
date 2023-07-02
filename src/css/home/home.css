@@ -9,6 +9,7 @@
   gap: calc(50% - 48px);
   position: fixed;
   top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -16,9 +17,14 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  animation: showLogo 0.4s;
   font-weight: 500;
   font-size: 30px;
   color: hsl(0, 0%, 100%);
+}
+
+#menu-h {
+  animation: showLogo 0.5s;
 }
 
 .menu-icon {
@@ -30,7 +36,7 @@
 
 .menu-container {
   list-style: none;
-  display: flex;
+  display: none;
   background-color: hsl(0, 0%, 100%);
   width: 100%;
   position: absolute;
@@ -64,8 +70,12 @@
     border-radius: 0 999px 999px 0;
   }
 }
+@keyframes showLogo {
+  0% {
+    transform: translateY(-100%);
+  }
+}
 .carrousel {
-  margin-top: 80px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -73,7 +83,7 @@
   flex-direction: column;
 }
 .carrousel .c-image {
-  height: 250px;
+  height: 320px;
   width: 100%;
   display: flex;
   justify-content: start;
@@ -113,7 +123,7 @@
 .carrousel .c-txt .arrows-container {
   height: 43px;
   position: absolute;
-  top: -44px;
+  top: -43px;
   right: 0;
   z-index: 10;
 }

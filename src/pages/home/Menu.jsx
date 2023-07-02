@@ -1,19 +1,25 @@
+import { useRef } from "react"
 
-export default function Menu() {
+export default function Menu(props) {
+
+  const menuContainer = useRef()
 
   function hideMenu(){
-    document.querySelectorAll('.menu-container')[0].style.display = 'none'
+    menuContainer.current.style.display = 'none'
+    props.hightBright()
   }
 
   function showMenu(){
-    document.querySelectorAll('.menu-container')[0].style.display = 'flex'
+    const bodyChildren  = document.querySelectorAll('.app')[0].childNodes
+    menuContainer.current.style.display = 'flex'
+    props.lowBright()
   }
 
   return (
     <nav className="menu">
         <span className="logo">room</span>
-        <img className="menu-icon" onClick={showMenu} src="/images/icon-hamburger.svg" alt="open-menu-icon" />
-        <div className="menu-container">
+        <img className="menu-icon" onClick={showMenu} id="menu-h" src="/images/icon-hamburger.svg" alt="open-menu-icon" />
+        <div className="menu-container" ref={menuContainer}>
             <img className="menu-icon" onClick={hideMenu} src="/images/icon-close.svg" alt="close-menu-icon" />  
             <ul>
                 <li className="menu-opt">home</li>

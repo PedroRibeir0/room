@@ -1,5 +1,5 @@
 .carrousel{
-    margin-top: 80px;
+    // margin-top: 80px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     flex-direction: column;
 
     .c-image{
-        height: 250px;
+        height: 320px;
         width: 100%;
         display: flex;
         justify-content: start;
@@ -46,7 +46,7 @@
         .arrows-container{
             height: 43px;
             position: absolute;
-            top: -44px;
+            top: -43px;
             right: 0;
             z-index: 10;
             .arrows{

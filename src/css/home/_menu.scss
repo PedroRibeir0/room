@@ -9,12 +9,18 @@
     gap: calc(50% - 48px);
     position: fixed;
     top: 0;
+    z-index: 1000;
 }
 
 .logo{
     order: 2;
     user-select: none;
+    animation: showLogo 0.4s;
     @include font(30px, 500, $white)
+}
+
+#menu-h{
+    animation: showLogo 0.5s;
 }
 
 .menu-icon{
@@ -26,7 +32,7 @@
 
 .menu-container{
     list-style: none;
-    display: flex;
+    display: none;
     background-color: $white;
     width: 100%;
     position: absolute;
@@ -58,5 +64,11 @@
     0%{
         transform: translateX(-100%);
         border-radius: 0 999px 999px 0;
+    }
+}
+
+@keyframes showLogo {
+    0%{
+        transform: translateY(-100%);
     }
 }
