@@ -10,7 +10,7 @@ $very-dark-gray: hsl(0, 0%, 27%);
     color: $color
 }
 
-@import 'menu', 'carrousel';
+@import 'menu', 'carrousel', 'static', 'footer';
 
 body{
     background-color: rgb(29, 29, 29);

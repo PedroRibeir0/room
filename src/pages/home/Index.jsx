@@ -2,7 +2,9 @@
 import '../../css/home/home.css'
 import Menu from './Menu'
 import Carrousel from './Carrousel'
+import Static from './Static'
 import { useRef } from 'react'
+import Footer from './Footer'
 
 export default function Index() {
 
@@ -29,6 +31,8 @@ export default function Index() {
         hightBright={hightBright}
       />
       <Carrousel/>
+      <Static/>
+      <Footer/>
     </div>
   )
 }
