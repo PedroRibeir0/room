@@ -2,7 +2,7 @@
     background-color: transparent;
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     height: 80px;
     padding: 0 20px;
@@ -10,17 +10,37 @@
     position: absolute;
     top: 0;
     z-index: 1000;
+    @media screen and (min-width: 1024px){
+        width: 50%;
+        gap: 40px;
+        height: 110px;
+        padding-left: 55px;
+        max-width: 650px;
+    }
 }
 
 .logo{
     order: 2;
     user-select: none;
     animation: showLogo 0.4s;
+    @media screen and (min-width: 1024px){
+        font-size: 33px;
+    }
     @include font(30px, 500, $white)
 }
 
 #menu-h{
     animation: showLogo 0.5s;
+    order: 1;
+    @media screen and (min-width: 1024px){
+        display: none;
+    }
+}
+
+#menu-c{
+    @media screen and (min-width: 1024px){
+        display: none;
+    }
 }
 
 .menu-icon{
@@ -44,12 +64,24 @@
     padding: 0 20px;
     animation: showMenu 0.2s;
 
+    @media screen and (min-width: 1024px){
+        display: flex;
+        position: static;
+        background-color: transparent;
+        color: $white;
+        order: 2;
+
+    }
+
     ul{
         width: 80%;
         list-style: none;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media screen and (min-width: 1024px){
+            width: 70%;
+        }
 
         li:hover{
             text-decoration: underline;
@@ -57,7 +89,7 @@
             text-decoration-thickness: 2px;
         }
     }
-    @include font(17px, 600, $black)
+    @include font(17px, 500, $black)
 }
 
 @keyframes showMenu {

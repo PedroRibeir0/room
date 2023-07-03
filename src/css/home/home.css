@@ -2,7 +2,7 @@
   background-color: transparent;
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   height: 80px;
   padding: 0 20px;
@@ -10,6 +10,15 @@
   position: absolute;
   top: 0;
   z-index: 1000;
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    width: 50%;
+    gap: 40px;
+    height: 110px;
+    padding-left: 55px;
+    max-width: 650px;
+  }
 }
 
 .logo {
@@ -22,9 +31,26 @@
   font-size: 30px;
   color: hsl(0, 0%, 100%);
 }
+@media screen and (min-width: 1024px) {
+  .logo {
+    font-size: 33px;
+  }
+}
 
 #menu-h {
   animation: showLogo 0.5s;
+  order: 1;
+}
+@media screen and (min-width: 1024px) {
+  #menu-h {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #menu-c {
+    display: none;
+  }
 }
 
 .menu-icon {
@@ -47,9 +73,18 @@
   right: 0;
   padding: 0 20px;
   animation: showMenu 0.2s;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 17px;
   color: hsl(0, 0%, 0%);
+}
+@media screen and (min-width: 1024px) {
+  .menu-container {
+    display: flex;
+    position: static;
+    background-color: transparent;
+    color: hsl(0, 0%, 100%);
+    order: 2;
+  }
 }
 .menu-container ul {
   width: 80%;
@@ -57,6 +92,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .menu-container ul {
+    width: 70%;
+  }
 }
 .menu-container ul li:hover {
   text-decoration: underline;
@@ -82,17 +122,29 @@
   align-items: center;
   flex-direction: column;
 }
+@media screen and (min-width: 1024px) {
+  .carrousel {
+    flex-direction: row;
+  }
+}
 .carrousel .c-image {
   height: 320px;
   width: 100%;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   animation: imgShow 0.6s;
   transition: all 0.2s;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
+}
+@media screen and (min-width: 1024px) {
+  .carrousel .c-image {
+    height: 520px;
+    width: 60%;
+    max-width: 810px;
+  }
 }
 .carrousel .c-image::-webkit-scrollbar {
   display: none;
@@ -113,14 +165,22 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 20px;
   background-color: hsl(0, 0%, 100%);
   padding: 50px 30px;
-  transition: all 0.5s;
+}
+@media screen and (min-width: 1024px) {
+  .carrousel .c-txt {
+    width: 45%;
+    height: 520px;
+    padding: 0 7%;
+  }
 }
 .carrousel .c-txt .arrows-container {
+  width: -moz-max-content;
+  width: max-content;
   height: 43px;
   position: absolute;
   top: -43px;
@@ -137,16 +197,39 @@
 .carrousel .c-txt .arrows-container .arrows:hover {
   background-color: hsl(0, 0%, 27%);
 }
+.carrousel .c-txt .arrows-container .arrows:nth-child(1) {
+  margin-right: -1px;
+}
+@media screen and (min-width: 1024px) {
+  .carrousel .c-txt .arrows-container .arrows {
+    font-size: 70px;
+    padding: 19px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .carrousel .c-txt .arrows-container {
+    right: 100%;
+    top: calc(100% - 70px);
+  }
+}
 .carrousel .c-txt h2 {
+  opacity: 0;
   font-weight: 700;
   font-size: 35px;
   color: hsl(0, 0%, 0%);
 }
 .carrousel .c-txt p {
+  opacity: 0;
   line-height: 19px;
   font-weight: 500;
   font-size: 16px;
   color: hsl(0, 0%, 63%);
+}
+.carrousel .c-txt h2.fade-in {
+  animation-delay: 0.05s;
+}
+.carrousel .c-txt p.fade-in {
+  animation-delay: 0.2s;
 }
 .carrousel .c-txt button {
   margin-top: 20px;
@@ -164,13 +247,26 @@
   color: hsl(0, 0%, 0%);
 }
 .carrousel .c-txt button:hover {
-  color: hsl(0, 0%, 27%);
   gap: 35px;
 }
 .carrousel .c-txt button:hover > span {
-  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
+  color: hsl(0, 0%, 27%);
 }
 
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.35s linear forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes imgShow {
   0% {
     transform: translateX(-100%);
@@ -183,17 +279,32 @@
   align-items: center;
   background-color: hsl(0, 0%, 100%);
 }
+@media screen and (min-width: 1024px) {
+  .static {
+    flex-direction: row;
+  }
+}
 .static .dark-img, .static .light-img {
   width: 100%;
   height: 266px;
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media screen and (min-width: 1024px) {
+  .static .dark-img, .static .light-img {
+    max-width: 30%;
+  }
+}
 .static .our-furniture {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 50px 30px;
+}
+@media screen and (min-width: 1024px) {
+  .static .our-furniture {
+    height: 266px;
+  }
 }
 .static .our-furniture h3 {
   text-transform: uppercase;
@@ -225,9 +336,15 @@ footer .footer-list, footer .social-icons {
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
+}
+footer .footer-list li, footer .social-icons li {
+  cursor: pointer;
+}
+footer .footer-list li:hover {
+  color: hsl(0, 0%, 63%);
 }
 footer .social-icons {
   flex-direction: row;
@@ -235,5 +352,10 @@ footer .social-icons {
 }
 
 body {
-  background-color: rgb(29, 29, 29);
+  background-color: rgb(20, 20, 20);
+}
+
+.app {
+  max-width: 1440px;
+  margin: 0 auto;
 }/*# sourceMappingURL=home.css.map */

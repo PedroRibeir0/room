@@ -20,7 +20,7 @@ export default function Menu(props) {
         <span className="logo">room</span>
         <img className="menu-icon" onClick={showMenu} id="menu-h" src="/images/icon-hamburger.svg" alt="open-menu-icon" />
         <div className="menu-container" ref={menuContainer}>
-            <img className="menu-icon" onClick={hideMenu} src="/images/icon-close.svg" alt="close-menu-icon" />  
+            <img className="menu-icon" onClick={hideMenu} id="menu-c" src="/images/icon-close.svg" alt="close-menu-icon" />  
             <ul>
                 <li className="menu-opt">home</li>
                 <li className="menu-opt">shop</li>

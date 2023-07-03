@@ -13,8 +13,13 @@ $very-dark-gray: hsl(0, 0%, 27%);
 @import 'menu', 'carrousel', 'static', 'footer';
 
 body{
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(20, 20, 20);
     // filter: brightness(30%);
+}
+
+.app{
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 

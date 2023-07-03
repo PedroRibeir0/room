@@ -6,21 +6,30 @@ import Index from './Index'
 export default function Carrousel() {
 
   const carrousel = useRef()
+  const reload = useRef()
 
   const [currentText, setCurrentText] = useState(Texts[0])
   const currentIndex = Texts.indexOf(currentText)
-  
+  const [fadeIn, setFadeIn] = useState(true);
 
   function bgRight(){
     carrousel.current.scrollLeft += carrousel.current.offsetWidth;
     if (currentIndex >= 2) return
     setCurrentText(Texts[currentIndex + 1])
+    setFadeIn(false); // Desativa o efeito "fade in" temporariamente
+    setTimeout(() => {
+      setFadeIn(true); // Ativa o efeito "fade in" após um pequeno atraso
+    }, 100)
   }
 
   function bgLeft(){
     carrousel.current.scrollLeft -= carrousel.current.offsetWidth;     
     if (currentIndex <= 0) return
     setCurrentText(Texts[currentIndex - 1])
+    setFadeIn(false); // Desativa o efeito "fade in" temporariamente
+    setTimeout(() => {
+      setFadeIn(true); // Ativa o efeito "fade in" após um pequeno atraso
+    }, 100)
   }
 
   return (
@@ -31,13 +40,13 @@ export default function Carrousel() {
         <img src={`/images/desktop-image-hero-3.jpg`} alt="" />
 
       </picture>
-      <div className="c-txt">
+      <div className='c-txt'>
       <div className="arrows-container" >
           <LiaAngleLeftSolid className='arrows' onClick={bgLeft}/>
           <LiaAngleRightSolid className='arrows' onClick={bgRight}/>
         </div>
-        <h2>{currentText.tittle}</h2>
-        <p>{currentText.paragraph}</p>
+        <h2 className={`${fadeIn ? "fade-in" : ""}`}>{currentText.tittle}</h2>
+        <p className={`${fadeIn ? "fade-in" : ""}`}>{currentText.paragraph}</p>
         <button>
           <span>Shop now</span>
           <img src="/images/icon-arrow.svg" alt="" />
