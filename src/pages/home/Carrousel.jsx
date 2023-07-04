@@ -47,7 +47,7 @@ export default function Carrousel() {
         </div>
         <h2 className={`${fadeIn ? "fade-in" : ""}`}>{currentText.tittle}</h2>
         <p className={`${fadeIn ? "fade-in" : ""}`}>{currentText.paragraph}</p>
-        <button>
+        <button className='shop-button'>
           <span>Shop now</span>
           <img src="/images/icon-arrow.svg" alt="" />
         </button>

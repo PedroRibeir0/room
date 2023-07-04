@@ -10,10 +10,11 @@ $very-dark-gray: hsl(0, 0%, 27%);
     color: $color
 }
 
-@import 'menu', 'carrousel', 'static', 'footer';
+@import 'menu', 'carrousel', 'static', 'footer', 'shop';
 
 body{
-    background-color: rgb(20, 20, 20);
+    // background-color: rgb(20, 20, 20);
+    background-color: $white;
     // filter: brightness(30%);
 }
 
@@ -22,4 +23,28 @@ body{
     margin: 0 auto;
 }
 
+
+button.shop-button{
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.2s;
+    
+    &:hover{ 
+        gap: 35px;
+        cursor: pointer;
+    }
+    &:hover > span{
+        text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
+        color: $very-dark-gray;    
+    }
+    @include font(17px, 600, $black)
+
+}
 

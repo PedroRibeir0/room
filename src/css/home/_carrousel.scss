@@ -67,6 +67,7 @@
                 padding: 11px;
                 &:hover{
                     background-color: $very-dark-gray;
+                    cursor: pointer;
                 }
                 &:nth-child(1){
                     margin-right: -1px;
@@ -103,31 +104,6 @@
         
         p.fade-in {
             animation-delay: 0.2s;
-        }
-
-
-
-        button{
-            margin-top: 20px;
-            border: none;
-            outline: none;
-            background-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.2s;
-            
-            &:hover{ 
-                gap: 35px;
-            }
-            &:hover > span{
-                text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
-                color: $very-dark-gray;    
-            }
-            @include font(17px, 600, $black)
-
         }
     }
 }

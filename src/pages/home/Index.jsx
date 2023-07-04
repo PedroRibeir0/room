@@ -5,6 +5,7 @@ import Carrousel from './Carrousel'
 import Static from './Static'
 import { useRef } from 'react'
 import Footer from './Footer'
+import Shop from './Shop'
 
 export default function Index() {
 
@@ -32,6 +33,7 @@ export default function Index() {
       />
       <Carrousel/>
       <Static/>
+      <Shop/>
       <Footer/>
     </div>
   )

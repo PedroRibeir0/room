@@ -196,6 +196,7 @@
 }
 .carrousel .c-txt .arrows-container .arrows:hover {
   background-color: hsl(0, 0%, 27%);
+  cursor: pointer;
 }
 .carrousel .c-txt .arrows-container .arrows:nth-child(1) {
   margin-right: -1px;
@@ -230,28 +231,6 @@
 }
 .carrousel .c-txt p.fade-in {
   animation-delay: 0.2s;
-}
-.carrousel .c-txt button {
-  margin-top: 20px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: all 0.2s;
-  font-weight: 600;
-  font-size: 17px;
-  color: hsl(0, 0%, 0%);
-}
-.carrousel .c-txt button:hover {
-  gap: 35px;
-}
-.carrousel .c-txt button:hover > span {
-  text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
-  color: hsl(0, 0%, 27%);
 }
 
 .fade-in {
@@ -351,11 +330,102 @@ footer .social-icons {
   gap: 20px;
 }
 
+.shop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  padding-bottom: 4px;
+  gap: 20px;
+}
+.shop h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 25px;
+  color: hsl(0, 0%, 0%);
+}
+.shop .shop-images {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.shop .shop-images picture {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.shop .shop-images picture:hover .overlay {
+  opacity: 1;
+}
+.shop .shop-images picture img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 16/9;
+}
+.shop .shop-images picture .overlay {
+  opacity: 0;
+  padding-bottom: 15px;
+  background-image: linear-gradient(to bottom, transparent 40%, hsl(0, 0%, 100%));
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.35s ease;
+}
+.shop .shop-images #img-1 {
+  order: 2;
+}
+.shop .shop-images .column {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.shop .shop-images #img-4 {
+  display: none;
+}
+
 body {
-  background-color: rgb(20, 20, 20);
+  background-color: hsl(0, 0%, 100%);
 }
 
 .app {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+button.shop-button {
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.2s;
+  font-weight: 600;
+  font-size: 17px;
+  color: hsl(0, 0%, 0%);
+}
+button.shop-button:hover {
+  gap: 35px;
+  cursor: pointer;
+}
+button.shop-button:hover > span {
+  text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
+  color: hsl(0, 0%, 27%);
 }/*# sourceMappingURL=home.css.map */
