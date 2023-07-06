@@ -346,12 +346,26 @@ footer .social-icons {
   font-size: 25px;
   color: hsl(0, 0%, 0%);
 }
+@media screen and (min-width: 1024px) {
+  .shop h2 {
+    font-size: 35px;
+    width: 45%;
+    line-height: 45px;
+  }
+}
 .shop .shop-images {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
+}
+@media screen and (min-width: 1024px) {
+  .shop .shop-images {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 .shop .shop-images picture {
   position: relative;
@@ -363,15 +377,27 @@ footer .social-icons {
 .shop .shop-images picture:hover .overlay {
   opacity: 1;
 }
+.shop .shop-images picture:hover .overlay .add-cart-button {
+  animation: buttonUp 0.2s 0.15s forwards ease-in;
+}
+.shop .shop-images picture:hover .overlay .add-cart-button .arrow {
+  animation: arrowMove 0.4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 .shop .shop-images picture img {
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 16/9;
 }
+@media screen and (min-width: 1024px) {
+  .shop .shop-images picture img {
+    aspect-ratio: initial;
+  }
+}
 .shop .shop-images picture .overlay {
+  display: none;
   opacity: 0;
   padding-bottom: 15px;
-  background-image: linear-gradient(to bottom, transparent 40%, hsl(0, 0%, 100%));
+  background-image: linear-gradient(to bottom, transparent 38%, hsl(0, 0%, 100%));
   position: absolute;
   top: 0;
   left: 0;
@@ -384,8 +410,30 @@ footer .social-icons {
   width: 100%;
   transition: opacity 0.35s ease;
 }
+.shop .shop-images picture .overlay .add-cart-button {
+  cursor: pointer;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  gap: 10px;
+}
 .shop .shop-images #img-1 {
   order: 2;
+}
+@media screen and (min-width: 1024px) {
+  .shop .shop-images #img-1 {
+    width: 32%;
+    order: 1;
+  }
+  .shop .shop-images #img-1 img {
+    width: 100%;
+  }
 }
 .shop .shop-images .column {
   order: 1;
@@ -393,10 +441,44 @@ footer .social-icons {
   flex-direction: column;
   gap: 4px;
 }
+@media screen and (min-width: 1024px) {
+  .shop .shop-images .column {
+    order: 2;
+    gap: 0.35vw;
+    width: 34%;
+  }
+  .shop .shop-images .column img {
+    width: 100%;
+  }
+}
 .shop .shop-images #img-4 {
   display: none;
 }
+@media screen and (min-width: 1024px) {
+  .shop .shop-images #img-4 {
+    display: initial;
+    width: 33%;
+    order: 3;
+  }
+  .shop .shop-images #img-4 img {
+    width: 100%;
+  }
+}
 
+@keyframes buttonUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes arrowMove {
+  100% {
+    transform: translateX(5px);
+  }
+}
 body {
   background-color: hsl(0, 0%, 100%);
 }

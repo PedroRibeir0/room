@@ -1,5 +1,22 @@
 
 export default function Shop() {
+
+  function Item(props){
+    return(
+      <picture id={props.id}>
+        <div className="overlay">
+          <span className="product-name">{props.name}</span>
+          <span className="product-price">${props.price}</span>
+          <button className="add-cart-button">
+            <span>Add to cart</span>
+            <img src="/images/icon-arrow.svg" alt="" className="arrow" style={{width:`${25}px`}}/>
+          </button>
+        </div>
+        <img src={props.src} alt="" />
+      </picture>
+    )
+  }
+
   return (
     <section className="shop">
         <h2>Transform your space with our stunning furniture collection</h2>
@@ -8,36 +25,32 @@ export default function Shop() {
           <img src="/images/icon-arrow.svg" alt="" />
         </button>
         <div className="shop-images">
-            <picture id="img-1" >
-              <div className="overlay">
-                <span className="product-name">name</span>
-                <span className="product-price">$99.99</span>
-              </div>
-              <img src="/images/shop-image-1.jpg" alt="" />
-            </picture>
+            <Item
+              id={'img-1'}
+              name={'White Plastic Chair'}
+              price={(49.9).toFixed(2)}
+              src={'/images/shop-image-1.jpg'}
+            />
             <div className="column">
-                <picture id="img-2" >
-                  <div className="overlay">
-                    <span className="product-name">name</span>
-                    <span className="product-price">$99.99</span>
-                  </div>
-                  <img src="/images/shop-image-2.jpg" alt="" />
-                </picture>
-                <picture id="img-3">
-                  <div className="overlay">
-                    <span className="product-name">name</span>
-                    <span className="product-price">$99.99</span>
-                  </div>
-                  <img src="/images/shop-image-3.jpg" alt="" />
-                </picture>
+              <Item
+                id={'img-2'}
+                name={'Aluminum Chair'}
+                price={(29.9).toFixed(2)}
+                src={'/images/shop-image-2.jpg'}
+              />
+              <Item
+                id={'img-3'}
+                name={'Leather Sofa'}
+                price={(299.9).toFixed(2)}
+                src={'/images/shop-image-3.jpg'}
+              />
             </div>
-            <picture id="img-4" >
-              <div className="overlay">
-                <span className="product-name">name</span>
-                <span className="product-price">$99.99</span>
-              </div>
-              <img src="/images/shop-image-4.jpg" alt="" />
-            </picture>
+            <Item
+              id={'img-4'}
+              name={'Wood Chair'}
+              price={(119.9).toFixed(2)}
+              src={'/images/shop-image-4.jpg'}
+            />
         </div>
     </section>
   )

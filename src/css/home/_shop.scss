@@ -10,6 +10,13 @@
 
     h2{
         text-align: center;
+
+        @media screen and (min-width: 1024px){
+            font-size: 35px;
+            width: 45%;
+            line-height: 45px;
+        }
+
         @include font(25px, 700, $black)
     }
 
@@ -19,6 +26,12 @@
         flex-direction: column;
         justify-content: center;
         gap: 4px;
+
+        @media screen and (min-width: 1024px){
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;   
+        }
 
         picture{
             position: relative;
@@ -31,15 +44,26 @@
                 opacity: 1;
             }
 
+            &:hover .overlay .add-cart-button{
+                animation: buttonUp .2s .15s forwards ease-in;
+            }
+            &:hover .overlay .add-cart-button .arrow{
+                animation: arrowMove .4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
             img{
                 object-fit: cover;
                 aspect-ratio: 16/9;
+                @media screen and (min-width: 1024px){
+                    aspect-ratio: initial;
+                }
             }
 
             .overlay{
+                display: none;
                 opacity: 0;
                 padding-bottom: 15px;
-                background-image: linear-gradient(to bottom, transparent 40%, $white);
+                background-image: linear-gradient(to bottom, transparent 38%, $white);
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -51,11 +75,32 @@
                 height: 100%;
                 width: 100%;
                 transition: opacity 0.35s ease;
+
+                .add-cart-button{
+                    cursor: pointer;
+                    opacity: 0;
+                    display: flex;
+                    align-items: center;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    margin-top: 5px;
+                    gap: 10px;
+                }
             }
         }
 
         #img-1{
             order: 2;
+            @media screen and (min-width: 1024px){
+                width: 32%;
+                order: 1;
+                img{
+                    width: 100%;
+                }
+            }
         }
 
         .column{
@@ -63,14 +108,43 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
+            @media screen and (min-width: 1024px){
+                order: 2;
+                gap: 0.35vw;
+                width: 34%;
+                img{
+                    width: 100%;
+                }
+            }
         }
 
         #img-4{
             display: none;
+            @media screen and (min-width: 1024px){
+                display: initial;
+                width: 33%;
+                order: 3;
+                img{
+                    width: 100%;
+                }
+            }
         }
-
-
     }
 
+}
+@keyframes buttonUp {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
 
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes arrowMove{
+    100%{
+        transform: translateX(5px);
+    }
 }
