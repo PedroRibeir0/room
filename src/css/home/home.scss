@@ -13,14 +13,16 @@ $very-dark-gray: hsl(0, 0%, 27%);
 @import 'menu', 'carrousel', 'static', 'footer', 'shop';
 
 body{
-    // background-color: rgb(20, 20, 20);
     background-color: $white;
-    // filter: brightness(30%);
 }
 
 .app{
     max-width: 1440px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 button.shop-button{
@@ -28,6 +30,7 @@ button.shop-button{
     border: none;
     outline: none;
     background-color: transparent;
+    padding: 10px;
     text-transform: uppercase;
     letter-spacing: 10px;
     display: flex;
@@ -47,3 +50,31 @@ button.shop-button{
 
 }
 
+button.all-products{
+    border: 1px solid $black;
+    font-size: 15px;
+    letter-spacing: 7px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+
+    &:hover{
+        gap: 20px;
+        background-color: rgba(0, 0, 0, 0.015);
+    }
+    
+    img{
+        animation: arrowMove .4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    @media screen and (min-width: 1024px){
+        font-size: 19px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+@keyframes arrowMove{
+    100%{
+        transform: translateX(7px);
+    }
+}

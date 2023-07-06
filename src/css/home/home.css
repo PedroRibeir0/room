@@ -9,6 +9,7 @@
   gap: calc(50% - 48px);
   position: absolute;
   top: 0;
+  left: 0;
   z-index: 1000;
 }
 @media screen and (min-width: 1024px) {
@@ -99,6 +100,7 @@
   }
 }
 .menu-container ul li:hover {
+  cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 7px;
   text-decoration-thickness: 2px;
@@ -300,16 +302,17 @@
 }
 
 footer {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 40px 0;
   gap: 30px;
-  background-color: hsl(0, 0%, 0%);
+  background-color: #ededed;
   font-weight: 500;
   font-size: 16px;
-  color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
 }
 footer .footer-list, footer .social-icons {
   list-style: none;
@@ -474,11 +477,6 @@ footer .social-icons {
     opacity: 1;
   }
 }
-@keyframes arrowMove {
-  100% {
-    transform: translateX(5px);
-  }
-}
 body {
   background-color: hsl(0, 0%, 100%);
 }
@@ -486,6 +484,10 @@ body {
 .app {
   max-width: 1440px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 button.shop-button {
@@ -493,6 +495,7 @@ button.shop-button {
   border: none;
   outline: none;
   background-color: transparent;
+  padding: 10px;
   text-transform: uppercase;
   letter-spacing: 10px;
   display: flex;
@@ -510,4 +513,32 @@ button.shop-button:hover {
 button.shop-button:hover > span {
   text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
   color: hsl(0, 0%, 27%);
+}
+
+button.all-products {
+  border: 1px solid hsl(0, 0%, 0%);
+  font-size: 15px;
+  letter-spacing: 7px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+button.all-products:hover {
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.015);
+}
+button.all-products img {
+  animation: arrowMove 0.4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@media screen and (min-width: 1024px) {
+  button.all-products {
+    font-size: 19px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+}
+
+@keyframes arrowMove {
+  100% {
+    transform: translateX(7px);
+  }
 }/*# sourceMappingURL=home.css.map */

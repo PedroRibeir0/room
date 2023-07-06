@@ -6,7 +6,7 @@ export default function Shop() {
       <picture id={props.id}>
         <div className="overlay">
           <span className="product-name">{props.name}</span>
-          <span className="product-price">${props.price}</span>
+          <span className="product-price">${(props.price).toFixed(2)}</span>
           <button className="add-cart-button">
             <span>Add to cart</span>
             <img src="/images/icon-arrow.svg" alt="" className="arrow" style={{width:`${25}px`}}/>
@@ -28,27 +28,27 @@ export default function Shop() {
             <Item
               id={'img-1'}
               name={'White Plastic Chair'}
-              price={(49.9).toFixed(2)}
+              price={49.9}
               src={'/images/shop-image-1.jpg'}
-            />
+            />  
             <div className="column">
               <Item
                 id={'img-2'}
                 name={'Aluminum Chair'}
-                price={(29.9).toFixed(2)}
+                price={29.9}
                 src={'/images/shop-image-2.jpg'}
               />
               <Item
                 id={'img-3'}
                 name={'Leather Sofa'}
-                price={(299.9).toFixed(2)}
+                price={299.9}
                 src={'/images/shop-image-3.jpg'}
               />
             </div>
             <Item
               id={'img-4'}
               name={'Wood Chair'}
-              price={(119.9).toFixed(2)}
+              price={119.9}
               src={'/images/shop-image-4.jpg'}
             />
         </div>
