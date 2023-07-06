@@ -1,6 +1,7 @@
 .menu {
   background-color: transparent;
   width: 100%;
+  max-width: 80%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -254,6 +255,8 @@
   }
 }
 .static {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -302,35 +305,76 @@
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  padding: 40px 30px;
   gap: 30px;
   background-color: #ededed;
   font-weight: 500;
   font-size: 16px;
   color: hsl(0, 0%, 0%);
 }
-footer .footer-list, footer .social-icons {
-  list-style: none;
+footer .footer-info {
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: left;
+  grid-row-gap: 30px;
+  grid-column-gap: 80px;
+}
+@media screen and (min-width: 1024px) {
+  footer .footer-info {
+    display: flex;
+  }
+}
+footer .footer-info ul {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
+  list-style: none;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 16px;
+  color: hsl(0, 0%, 0%);
 }
-footer .footer-list li, footer .social-icons li {
-  cursor: pointer;
+@media screen and (min-width: 1024px) {
+  footer .footer-info ul {
+    gap: 14px;
+  }
 }
-footer .footer-list li:hover {
+footer .footer-info ul li {
+  font-weight: 400;
+  font-size: 16px;
+  color: hsl(0, 0%, 27%);
+}
+footer .footer-info ul li:nth-child(1) {
+  margin-top: 15px;
+}
+footer .footer-info ul li:hover {
   color: hsl(0, 0%, 63%);
 }
 footer .social-icons {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid hsl(0, 0%, 63%);
+  display: flex;
+  list-style: none;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+}
+@media screen and (min-width: 1024px) {
+  footer .social-icons {
+    width: 40%;
+    padding-top: 30px;
+    gap: 35px;
+  }
+}
+footer .social-icons li img {
+  filter: invert(75%);
 }
 
 .shop {
@@ -387,6 +431,7 @@ footer .social-icons {
   animation: arrowMove 0.4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .shop .shop-images picture img {
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 16/9;
@@ -482,6 +527,7 @@ body {
 }
 
 .app {
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
@@ -520,7 +566,8 @@ button.all-products {
   font-size: 15px;
   letter-spacing: 7px;
   padding: 20px 25px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 button.all-products:hover {
   gap: 20px;

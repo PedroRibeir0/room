@@ -24,6 +24,7 @@ export default function Index() {
     })
   }
   return (
+    <>
     <div 
       className='app'
       ref={appContainer}>
@@ -37,9 +38,10 @@ export default function Index() {
       <button className='shop-button all-products'>
         <span>See all products</span>
           <img src="/images/icon-arrow.svg" alt="" />
-      </button>
-      <Footer/>
+      </button> 
     </div>
+     <Footer/>
+    </>
   )
 }
 
