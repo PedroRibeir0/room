@@ -35,10 +35,6 @@ export default function Index() {
       <Carrousel/>
       <Static/>
       <Shop/>
-      <button className='shop-button all-products'>
-        <span>See all products</span>
-          <img src="/images/icon-arrow.svg" alt="" />
-      </button> 
     </div>
      <Footer/>
     </>

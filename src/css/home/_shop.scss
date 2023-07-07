@@ -64,7 +64,7 @@
                 display: none;
                 opacity: 0;
                 padding-bottom: 15px;
-                background-image: linear-gradient(to bottom, transparent 38%, $white);
+                background-image: linear-gradient(to bottom, transparent 32%, $white);
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -78,17 +78,32 @@
                 transition: opacity 0.35s ease;
 
                 .add-cart-button{
+                    width: 200px;
                     cursor: pointer;
                     opacity: 0;
                     display: flex;
                     align-items: center;
+                    justify-content: center;
                     background-color: transparent;
                     border: none;
                     outline: none;
                     text-transform: uppercase;
                     letter-spacing: 2px;
-                    margin-top: 5px;
+                    margin-top: 6px;
                     gap: 10px;
+                    padding: 8px;
+                    &:hover{
+                        color: $very-dark-gray;
+                    }
+
+                    &:active{
+                        transform: scale(0.96);
+                    }
+                    @include font(25px, 400, $black)
+                }
+                
+                &:hover .cart{
+                    animation: buttonUp 0.1s forwards ease-in;
                 }
             }
         }
@@ -131,6 +146,29 @@
             }
         }
     }
+    button.all-products{
+        border: 1px solid $black;
+        font-size: 15px;
+        letter-spacing: 7px;
+        padding: 20px 25px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    
+        &:hover{
+            gap: 20px;
+            background-color: rgba(0, 0, 0, 0.015);
+        }
+        
+        .arrow{
+            animation: arrowMove .4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    
+        @media screen and (min-width: 1024px){
+            font-size: 19px;
+            margin-top: 50px;
+            margin-bottom: 80px;
+        }
+    }
 
 }
 @keyframes buttonUp {
@@ -141,6 +179,12 @@
 
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes arrowMove{
+    100%{
+        transform: translateX(7px);
     }
 }
 

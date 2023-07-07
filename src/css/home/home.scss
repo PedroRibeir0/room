@@ -24,6 +24,15 @@ body{
     flex-direction: column;
     align-items: center;
     position: relative;
+
+    @media screen and (min-width: 504px){
+        width: 504px;
+    }
+
+    @media screen and (min-width: 1024px){
+        width: 100%;
+    }
+
 }
 
 button.shop-button{
@@ -51,32 +60,3 @@ button.shop-button{
 
 }
 
-button.all-products{
-    border: 1px solid $black;
-    font-size: 15px;
-    letter-spacing: 7px;
-    padding: 20px 25px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-
-    &:hover{
-        gap: 20px;
-        background-color: rgba(0, 0, 0, 0.015);
-    }
-    
-    img{
-        animation: arrowMove .4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    @media screen and (min-width: 1024px){
-        font-size: 19px;
-        margin-top: 30px;
-        margin-bottom: 50px;
-    }
-}
-
-@keyframes arrowMove{
-    100%{
-        transform: translateX(7px);
-    }
-}

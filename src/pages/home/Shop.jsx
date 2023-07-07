@@ -1,5 +1,8 @@
+import {FaOpencart} from 'react-icons/fa'
+import { useState } from 'react'
 
 export default function Shop() {
+
 
   function Item(props){
     return(
@@ -8,8 +11,8 @@ export default function Shop() {
           <span className="product-name">{props.name}</span>
           <span className="product-price">${(props.price).toFixed(2)}</span>
           <button className="add-cart-button">
-            <span>Add to cart</span>
-            <img src="/images/icon-arrow.svg" alt="" className="arrow" style={{width:`${25}px`}}/>
+            {/* <span>Add to cart</span> */}
+            <FaOpencart className='cart'/>
           </button>
         </div>
         <img src={props.src} alt="" />
@@ -52,6 +55,10 @@ export default function Shop() {
               src={'/images/shop-image-4.jpg'}
             />
         </div>
+        <button className='shop-button all-products'>
+          <span>See all products</span>
+          <img src="/images/icon-arrow.svg" alt="" className='arrow'/>
+      </button> 
     </section>
   )
 }

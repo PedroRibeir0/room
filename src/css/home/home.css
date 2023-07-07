@@ -1,7 +1,6 @@
 .menu {
   background-color: transparent;
   width: 100%;
-  max-width: 80%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -445,7 +444,7 @@ footer .social-icons li img {
   display: none;
   opacity: 0;
   padding-bottom: 15px;
-  background-image: linear-gradient(to bottom, transparent 38%, hsl(0, 0%, 100%));
+  background-image: linear-gradient(to bottom, transparent 32%, hsl(0, 0%, 100%));
   position: absolute;
   top: 0;
   left: 0;
@@ -459,17 +458,32 @@ footer .social-icons li img {
   transition: opacity 0.35s ease;
 }
 .shop .shop-images picture .overlay .add-cart-button {
+  width: 200px;
   cursor: pointer;
   opacity: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: transparent;
   border: none;
   outline: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-top: 5px;
+  margin-top: 6px;
   gap: 10px;
+  padding: 8px;
+  font-weight: 400;
+  font-size: 25px;
+  color: hsl(0, 0%, 0%);
+}
+.shop .shop-images picture .overlay .add-cart-button:hover {
+  color: hsl(0, 0%, 27%);
+}
+.shop .shop-images picture .overlay .add-cart-button:active {
+  transform: scale(0.96);
+}
+.shop .shop-images picture .overlay:hover .cart {
+  animation: buttonUp 0.1s forwards ease-in;
 }
 .shop .shop-images #img-1 {
   order: 2;
@@ -512,6 +526,28 @@ footer .social-icons li img {
     width: 100%;
   }
 }
+.shop button.all-products {
+  border: 1px solid hsl(0, 0%, 0%);
+  font-size: 15px;
+  letter-spacing: 7px;
+  padding: 20px 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.shop button.all-products:hover {
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.015);
+}
+.shop button.all-products .arrow {
+  animation: arrowMove 0.4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@media screen and (min-width: 1024px) {
+  .shop button.all-products {
+    font-size: 19px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+}
 
 @keyframes buttonUp {
   0% {
@@ -520,6 +556,11 @@ footer .social-icons li img {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes arrowMove {
+  100% {
+    transform: translateX(7px);
   }
 }
 body {
@@ -534,6 +575,16 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+@media screen and (min-width: 504px) {
+  .app {
+    width: 504px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .app {
+    width: 100%;
+  }
 }
 
 button.shop-button {
@@ -559,33 +610,4 @@ button.shop-button:hover {
 button.shop-button:hover > span {
   text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
   color: hsl(0, 0%, 27%);
-}
-
-button.all-products {
-  border: 1px solid hsl(0, 0%, 0%);
-  font-size: 15px;
-  letter-spacing: 7px;
-  padding: 20px 25px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-button.all-products:hover {
-  gap: 20px;
-  background-color: rgba(0, 0, 0, 0.015);
-}
-button.all-products img {
-  animation: arrowMove 0.4s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-@media screen and (min-width: 1024px) {
-  button.all-products {
-    font-size: 19px;
-    margin-top: 30px;
-    margin-bottom: 50px;
-  }
-}
-
-@keyframes arrowMove {
-  100% {
-    transform: translateX(7px);
-  }
 }/*# sourceMappingURL=home.css.map */
