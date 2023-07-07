@@ -379,6 +379,7 @@ footer .footer-info ul {
   }
 }
 footer .footer-info ul li {
+  cursor: pointer;
   font-weight: 400;
   font-size: 16px;
   color: hsl(0, 0%, 27%);
@@ -406,6 +407,9 @@ footer .social-icons {
     padding-top: 30px;
     gap: 35px;
   }
+}
+footer .social-icons li {
+  cursor: pointer;
 }
 footer .social-icons li img {
   filter: invert(75%);

@@ -29,11 +29,15 @@ footer{
             }
             
             li{
+
+                cursor: pointer;
+
                 &:nth-child(1){
                     margin-top: 15px;
                 }
                 &:hover{
                     color: $dark-gray;
+                    
                 }
                 
                 @include font(16px, 400, $very-dark-gray)
@@ -57,6 +61,11 @@ footer{
             width: 40%;
             padding-top: 30px;
             gap: 35px;
+        }
+
+        li{
+            cursor: pointer;
+
         }
 
         li img{
