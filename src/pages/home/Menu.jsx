@@ -1,4 +1,6 @@
 import { useRef } from "react"
+import {FaOpencart} from 'react-icons/fa'
+import {FiUser} from 'react-icons/fi'
 
 export default function Menu(props) {
 
@@ -16,6 +18,11 @@ export default function Menu(props) {
   }
 
   return (
+    <>
+    <ul className="user-cart">
+      <li><FaOpencart/></li>
+      <li><FiUser/></li>
+    </ul>
     <nav className="menu">
         <span className="logo">room</span>
         <img className="menu-icon" onClick={showMenu} id="menu-h" src="/images/icon-hamburger.svg" alt="open-menu-icon" />
@@ -29,6 +36,7 @@ export default function Menu(props) {
             </ul>
         </div>
     </nav>
+    </>
   )
 }
 
